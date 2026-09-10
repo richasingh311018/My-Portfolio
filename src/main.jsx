@@ -23,17 +23,16 @@ const navItems = [
 
 const stack = {
   Languages: ['Python', 'C++', 'Java', 'JavaScript', 'HTML', 'CSS'],
-  Development: ['React', 'Node.js', 'Express', 'MERN Stack', 'FastAPI', 'Tailwind CSS', 'Bootstrap'],
-  Database: ['PostgreSQL', 'Firebase', 'Qdrant'],
-  'AI / ML': ['Python', 'AI / ML', 'Computer Vision', 'NLP'],
+  Development: ['React', 'Node.js', 'Express', 'FastAPI', 'Tailwind CSS', 'Bootstrap'],
+  Database: ['MySQL', 'MongoDB'],
   Tools: ['Git', 'GitHub', 'VS Code', 'Docker'],
   Cloud: ['AWS', 'Cloud / Deployment']
 };
 
 const projects = [
-  { number: '01', name: 'RESQNET', type: 'AI disaster intelligence', description: 'An AI-powered disaster intelligence and response system that transforms fragmented reports, images, and location data into actionable rescue intelligence.', tech: ['React', 'FastAPI', 'Python', 'PostgreSQL', 'Qdrant'], image: 'projects/resqnet.jpg', features: ['Disaster Digital Twin', 'Survivor Priority Index', 'Human-in-the-Loop AI'], tone: 'violet' },
-  { number: '02', name: 'AI-Based Predictive Energy Monitoring System', type: 'Hindalco internship project', description: 'An AI-based system for monitoring energy consumption, analyzing usage patterns, detecting anomalies, and identifying inefficient energy usage.', tech: ['Python', 'AI / ML'], image: 'projects/energy-monitoring.jpg', features: ['Usage pattern analysis', 'Anomaly detection', 'Inefficient usage detection'], tone: 'pink' },
-  { number: '03', name: 'SUNOSAATHI', type: 'Voice-first platform', description: 'A voice-first financial inclusion platform designed to make digital financial services easier to access for users with limited digital literacy.', tech: ['React', 'Tailwind', 'Voice AI', 'OCR'], image: 'projects/sunosaathi.jpg', features: ['Voice-first access', 'Accessible UX', 'Financial inclusion'], tone: 'blue' }
+  { number: '01', name: 'AI Posture Sense', type: 'Exercise posture monitoring', description: 'An AI-powered exercise posture monitoring system that uses computer vision to detect incorrect body posture during workouts in real time and provide posture analysis and feedback.', tech: ['React', 'Tailwind CSS', 'Python', 'OpenCV'], image: 'AI posture analysis', features: ['Real-time posture detection', 'Incorrect posture detection', 'Exercise form monitoring', 'Posture analysis and feedback', 'Real-time feedback', 'User-friendly interface'], tone: 'violet', githubUrl: 'https://github.com/richasingh311018', openInNewTab: true },
+  { number: '02', name: 'AI-Based Predictive Energy Monitoring System', type: 'Hindalco internship project', description: 'An AI-based system for monitoring energy consumption, analyzing usage patterns, detecting anomalies, and identifying inefficient energy usage.', tech: ['Python', 'AI / ML'], image: 'projects/energy-monitoring.jpg', features: ['Usage pattern analysis', 'Anomaly detection', 'Inefficient usage detection'], tone: 'pink', githubUrl: 'https://github.com/richasingh311018/ai-energy-monitoring-system.git' },
+  { number: '03', name: 'SUNOSAATHI', type: 'Voice-first platform', description: 'A voice-first financial inclusion platform designed to make digital financial services easier to access for users with limited digital literacy.', tech: ['React', 'Tailwind', 'Voice AI', 'OCR'], image: 'projects/sunosaathi.jpg', features: ['Voice-first access', 'Accessible UX', 'Financial inclusion'], tone: 'blue', githubUrl: 'https://github.com/richasingh311018/sunosathii.git' }
 ];
 
 function useReveal() {
@@ -61,10 +60,10 @@ function SectionHeading({ eyebrow, title, text }) {
   return <div className="section-heading reveal"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>;
 }
 
-function CertificatePreview({ src, alt }) {
+function CertificatePreview({ src, alt, rotated = false }) {
   return src.endsWith('.pdf')
     ? <iframe src={src} title={alt} />
-    : <img src={src} alt={alt} />;
+    : <img className={rotated ? 'certificate-rotated' : ''} src={src} alt={alt} />;
 }
 
 function App() {
@@ -107,8 +106,8 @@ function App() {
         <div className="hero-copy">
           <div className="availability"><i /> Open to opportunities <span>·</span> 2026</div>
           <p className="hero-kicker">Computer Science & Engineering <b>×</b> AI</p>
-          <h1>Building ideas<br /><em>into impact.</em></h1>
-          <p className="hero-intro">I’m a developer focused on intelligent systems, thoughtful products, and solving problems that matter.</p>
+          <h1>AI developer<br /><em>and engineer.</em></h1>
+          <p className="hero-intro">AI/ML, full-stack, and backend development.</p>
           <div className="hero-actions"><a className="button primary" href="#projects" onClick={() => goTo('projects')}>View my work <ArrowUpRight size={17} /></a><a className="button secondary" href="/resume.pdf" download><Download size={16} /> Download resume</a></div>
           <div className="social-row"><span>Find me on</span><a href="https://www.linkedin.com/in/richa-singh-060853314/" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="https://github.com/richasingh311018" aria-label="GitHub"><Github size={18} /></a><a href="mailto:YOUR_EMAIL" aria-label="Email"><Mail size={18} /></a></div>
         </div>
@@ -119,7 +118,7 @@ function App() {
             <div className="window-bar"><span /><span /><span /><label>intelligence.py</label></div>
             <pre><code><b>class</b> <i>Builder</i>:
   focus = <strong>"real-world AI"</strong>
-  curiosity = <strong>∞</strong>
+  systems = <strong>"practical software"</strong>
 
   <b>def</b> <i>create</i>(self, idea):
     <b>return</b> idea.<u>make_useful</u>()</code></pre>
@@ -127,63 +126,63 @@ function App() {
           </div>
           <div className="floating-chip chip-ai"><BrainCircuit size={15} /> AI / ML</div>
           <div className="floating-chip chip-stack"><Code2 size={15} /> full stack</div>
-          <div className="art-caption"><span>01</span><span>curiosity → creation</span></div>
+          <div className="art-caption"><span>01</span><span>AI → applications</span></div>
         </div>
-        <a className="scroll-cue" href="#about"><span>Scroll to explore</span><ChevronDown size={17} /></a>
+        <a className="scroll-cue" href="#about"><span>Scroll down</span><ChevronDown size={17} /></a>
       </section>
 
       <section className="section-shell about-section" id="about">
-        <SectionHeading eyebrow="01 / About" title={<>A developer with a<br /><span>builder's mindset.</span></>} text="I build practical software for real problems." />
+        <SectionHeading eyebrow="01 / About" title={<>AI and software<br /><span>development.</span></>} text="Practical applications across AI/ML, full-stack development, backend systems, and System Design." />
         <div className="about-grid">
-          <div className="about-body reveal"><p>I’m Richa Singh, a Computer Science & Engineering (AI) student who enjoys building practical applications and exploring how technology can solve real problems. My work spans AI/ML, full-stack development, backend systems, and hackathon projects.</p><p>I’m currently exploring AI/ML and System Design while building practical projects and strengthening my software engineering skills.</p><div className="interest-list"><span><Zap size={15} /> Artificial Intelligence</span><span><Terminal size={15} /> Full Stack Development</span><span><BrainCircuit size={15} /> System Design</span></div></div>
-          <TiltCard className="profile-card reveal"><div className="profile-image"><img src={profilePhoto} alt="Richa Singh" /><div className="profile-stamp">CSE<br /><b>AI</b></div></div><div className="profile-meta"><span>Based in India</span><span>Building with intent.</span></div></TiltCard>
+          <div className="about-body reveal"><p>I’m Richa Singh, a Computer Science & Engineering (AI) student at UIET, CSJMU, Kanpur. My work spans AI/ML, full-stack development, backend systems, System Design, and practical hackathon projects.</p><div className="interest-list"><span><Zap size={15} /> Artificial Intelligence</span><span><Terminal size={15} /> Full Stack Development</span><span><BrainCircuit size={15} /> System Design</span></div></div>
+          <TiltCard className="profile-card reveal"><div className="profile-image"><img src={profilePhoto} alt="Richa Singh" /><div className="profile-stamp">CSE<br /><b>AI</b></div></div><div className="profile-meta"><span>Based in India</span><span>AI / Full-stack developer</span></div></TiltCard>
         </div>
       </section>
 
       <section className="section-shell education-section" id="education">
-        <SectionHeading eyebrow="02 / Education" title="Education and milestones." />
+        <SectionHeading eyebrow="02 / Education" title="Education." />
         <div className="education-layout">
           <div className="timeline reveal"><div className="timeline-line" /><article><span className="timeline-dot" /><div className="date-label">2024–2028</div><h3>B.Tech in Computer Science & Engineering (AI)</h3><p>UIET, CSJMU, Kanpur</p></article></div>
-          <div className="metrics reveal"><div><span>10th Percentage</span><strong>88.5<sup>%</sup></strong></div><div><span>12th Percentage</span><strong>92.4<sup>%</sup></strong></div><div><span>4th Semester SGPA</span><strong>8.24</strong></div><div className="topper"><Award size={25} /><span>Achievement</span><strong>First Position in Class 12</strong><small>School topper.</small></div></div>
+          <div className="metrics reveal"><div><span>10th Percentage</span><strong>88.5<sup>%</sup></strong></div><div><span>12th Percentage</span><strong>92.4<sup>%</sup></strong></div><div><span>4th Semester SGPA</span><strong>8.24</strong></div><div className="topper"><Award size={25} /><span>Achievement</span><strong>Awarded 1st position in Class 12</strong></div></div>
         </div>
       </section>
 
       <section className="section-shell certificates-section" id="certificates">
-        <SectionHeading eyebrow="03 / Certificates" title={<>Proof of progress,<br /><span>not a checklist.</span></>} text="Selected certificates and achievements." />
-        <div className="certificate-grid reveal">{[[classAwardPhoto, 'Class 12 School Topper', 'Academic achievement'], [hindalcoCertificate, 'Hindalco Internship Certificate', 'Hindalco Industries Limited'], [ibmCertificate, "IBM BOB Hacks '26", 'Grand Finalist'], [avinyaCertificate, 'IIT Guwahati Avinya', 'IIT Guwahati']].map(([image, title, organization]) => <button className="certificate-card" key={title} onClick={() => setSelectedCertificate(image)}><div className="certificate-image"><CertificatePreview src={image} alt={title} /><ExternalLink size={16} /></div><div className="certificate-info"><span className="eyebrow">Certificate</span><h3>{title}</h3><p>{organization}</p><strong>View certificate <ArrowUpRight size={15} /></strong></div></button>)}</div>
+        <SectionHeading eyebrow="03 / Certificates" title={<>Certificates<br /><span>and achievements.</span></>} />
+        <div className="certificate-grid reveal">{[[classAwardPhoto, 'Class 12 Achievement', 'Academic achievement', false], [hindalcoCertificate, 'Hindalco Internship Certificate', 'Hindalco Industries Limited', false], [ibmCertificate, "IBM BOB Hacks '26", 'Grand Finalist', true], [avinyaCertificate, 'IIT Guwahati Avinya', 'IIT Guwahati', true]].map(([image, title, organization, rotated]) => <button className="certificate-card" key={title} onClick={() => setSelectedCertificate({ src: image, alt: title, rotated })}><div className="certificate-image"><CertificatePreview src={image} alt={title} rotated={rotated} /><ExternalLink size={16} /></div><div className="certificate-info"><span className="eyebrow">Certificate</span><h3>{title}</h3><p>{organization}</p><strong>View certificate <ArrowUpRight size={15} /></strong></div></button>)}</div>
       </section>
 
       <section className="section-shell stack-section" id="stack">
-        <SectionHeading eyebrow="04 / Tech stack" title={<>Tools for turning<br /><span>curiosity into code.</span></>} />
+        <SectionHeading eyebrow="04 / Tech stack" title={<>Technologies<br /><span>I use.</span></>} />
         <div className="stack-grid reveal">{Object.entries(stack).map(([category, items]) => <div className="stack-group" key={category}><h3>{category}</h3><div>{items.map(item => <span key={item}>{item}</span>)}</div></div>)}</div>
       </section>
 
       <section className="section-shell experience-section" id="experience">
-        <SectionHeading eyebrow="05 / Experience" title="Where learning meets practice." />
-        <TiltCard className="experience-card reveal"><div className="experience-mark"><BriefcaseBusiness size={32} /><span>ABG</span></div><div className="experience-main"><div className="experience-top"><div><span className="eyebrow">IT Internship</span><h3>Hindalco Industries Limited</h3><p>Aditya Birla Group · Renukoot</p></div><span className="placeholder-pill">Excellent</span></div><div className="experience-details"><div><span>Role</span><strong>IT Intern</strong></div><div><span>Duration</span><strong>29 May – 15 Jul 2026</strong></div><div><span>Department</span><strong>Information & Technology</strong></div></div><p className="placeholder-copy">Completed an IT internship at Hindalco Industries Limited, working on an AI-Based Predictive Energy Monitoring System.</p><div className="experience-media"><img src={internshipPhoto} alt="Hindalco internship" /><img src={internshipCupPhoto} alt="Hindalco internship" /></div></div></TiltCard>
+        <SectionHeading eyebrow="05 / Experience" title="Internship experience." />
+        <TiltCard className="experience-card reveal"><div className="experience-mark"><BriefcaseBusiness size={32} /><span>ABG</span></div><div className="experience-main"><div className="experience-top"><div><span className="eyebrow">IT Internship</span><h3>Hindalco Industries Limited</h3><p>Aditya Birla Group · Renukoot</p></div><span className="placeholder-pill">Excellent</span></div><div className="experience-details"><div><span>Role</span><strong>IT Intern</strong></div><div><span>Duration</span><strong>29 May 2026 – 15 July 2026</strong></div><div><span>Department</span><strong>Information & Technology</strong></div></div><p className="placeholder-copy">Completed an IT internship at Hindalco Industries Limited, working on an AI-Based Predictive Energy Monitoring System.</p><div className="experience-media"><img src={internshipPhoto} alt="Hindalco internship building" onClick={() => setSelectedCertificate({ src: internshipPhoto, alt: 'Hindalco internship building' })} role="button" tabIndex="0" /><img src={internshipCupPhoto} alt="Hindalco internship cup" onClick={() => setSelectedCertificate({ src: internshipCupPhoto, alt: 'Hindalco internship cup' })} role="button" tabIndex="0" /></div></div></TiltCard>
       </section>
 
       <section className="section-shell hackathons-section" id="hackathons">
-        <SectionHeading eyebrow="06 / Hackathons" title="Built under pressure.<br /><span>Selected with purpose.</span>" />
-        <div className="hackathon-grid reveal"><TiltCard className="hack-card"><div className="hack-top"><span className="hack-number">01</span><span className="finalist">Grand Finalist</span></div><div className="hack-logo"><Radio size={25} /> IBM <b>bob</b></div><h3>IBM BOB Hacks '26</h3><p>Grand Finalist at IBM BOB Hacks '26.</p><div className="hack-footer"><img src={ibmGroupPhoto} alt="IBM BOB Hacks group" onClick={() => setSelectedCertificate(ibmGroupPhoto)} role="button" tabIndex="0" /><ArrowUpRight size={17} /></div></TiltCard><TiltCard className="hack-card featured"><div className="hack-top"><span className="hack-number">02</span><span className="finalist">Finalist</span></div><div className="hack-logo"><Sparkles size={25} /> AVINYA</div><h3>IIT Guwahati Avinya</h3><p>Finalist at Avinya, IIT Guwahati.</p><div className="hack-footer"><img src={avinyaGroupPhoto} alt="Avinya group" onClick={() => setSelectedCertificate(avinyaGroupPhoto)} role="button" tabIndex="0" /><ArrowUpRight size={17} /></div></TiltCard></div>
+        <SectionHeading eyebrow="06 / Hackathons" title="Hackathon<br /><span>achievements.</span>" />
+        <div className="hackathon-grid reveal"><TiltCard className="hack-card"><div className="hack-top"><span className="hack-number">01</span><span className="finalist">Grand Finalist</span></div><div className="hack-logo"><Radio size={25} /> IBM <b>bob</b></div><h3>IBM BOB Hacks '26</h3><p>Grand Finalist at IBM BOB Hacks '26.</p><div className="hack-footer"><img src={ibmGroupPhoto} alt="IBM BOB Hacks group" onClick={() => setSelectedCertificate({ src: ibmGroupPhoto, alt: 'IBM BOB Hacks group' })} role="button" tabIndex="0" /><ArrowUpRight size={17} /></div></TiltCard><TiltCard className="hack-card featured"><div className="hack-top"><span className="hack-number">02</span><span className="finalist">Finalist</span></div><div className="hack-logo"><Sparkles size={25} /> AVINYA</div><h3>IIT Guwahati Avinya</h3><p>Finalist at Avinya, IIT Guwahati.</p><div className="hack-footer"><img src={avinyaGroupPhoto} alt="Avinya group" onClick={() => setSelectedCertificate({ src: avinyaGroupPhoto, alt: 'Avinya group' })} role="button" tabIndex="0" /><ArrowUpRight size={17} /></div></TiltCard></div>
       </section>
 
       <section className="section-shell projects-section" id="projects">
-        <div className="projects-heading"><SectionHeading eyebrow="07 / Selected work" title={<>A few things I’ve<br /><span>made along the way.</span></>} /><a className="text-link" href="https://github.com/richasingh311018">View GitHub <ArrowUpRight size={16} /></a></div>
-        <div className="projects-list">{projects.map(project => <TiltCard className={`project-card reveal ${project.tone}`} key={project.name}><div className="project-visual"><div className="visual-placeholder"><span>{project.image}</span><div className="visual-lines" /></div><span className="project-number">{project.number}</span><span className="project-type">{project.type}</span></div><div className="project-content"><h3>{project.name}</h3><p>{project.description}</p><div className="feature-row">{project.features.map(feature => <span key={feature}>{feature}</span>)}</div><div className="project-bottom"><div className="tech-row">{project.tech.map(tech => <span key={tech}>{tech}</span>)}</div><a href="https://github.com/richasingh311018" aria-label={`View ${project.name} on GitHub`}><Github size={18} /></a></div></div></TiltCard>)}</div>
+        <div className="projects-heading"><SectionHeading eyebrow="07 / Selected work" title={<>Selected<br /><span>projects.</span></>} /><a className="text-link" href="https://github.com/richasingh311018">View GitHub <ArrowUpRight size={16} /></a></div>
+        <div className="projects-list">{projects.map(project => <TiltCard className={`project-card reveal ${project.tone}`} key={project.name}><div className="project-visual"><div className="visual-placeholder"><span>{project.image}</span><div className="visual-lines" /></div><span className="project-number">{project.number}</span><span className="project-type">{project.type}</span></div><div className="project-content"><h3>{project.name}</h3><p>{project.description}</p><div className="feature-row">{project.features.map(feature => <span key={feature}>{feature}</span>)}</div><div className="project-bottom"><div className="tech-row">{project.tech.map(tech => <span key={tech}>{tech}</span>)}</div>{project.githubUrl && <a href={project.githubUrl} target={project.openInNewTab ? '_blank' : undefined} rel={project.openInNewTab ? 'noreferrer' : undefined} aria-label={`View ${project.name} on GitHub`}><Github size={18} /></a>}</div></div></TiltCard>)}</div>
       </section>
 
       <section className="section-shell beyond-section" id="beyond">
-        <div className="beyond-copy reveal"><SectionHeading eyebrow="08 / Beyond code" title={<>The person behind<br /><span>the projects.</span></>} /><p>Good ideas don’t only come from a screen. I make room for the things that keep me grounded, curious, and moving.</p></div>
-        <div className="beyond-cards"><TiltCard className="beyond-card reveal"><span className="hobby-icon">🥋</span><h3>Taekwondo</h3><p>A hobby and personal interest.</p></TiltCard><TiltCard className="beyond-card reveal"><span className="hobby-icon">🎤</span><h3>Singing</h3><p>A creative outlet and one of the ways I recharge.</p></TiltCard></div>
+        <div className="beyond-copy reveal"><SectionHeading eyebrow="08 / Beyond code" title={<>Interests<br /><span>outside code.</span></>} /></div>
+        <div className="beyond-cards"><TiltCard className="beyond-card reveal"><span className="hobby-icon">🥋</span><h3>Taekwondo</h3></TiltCard><TiltCard className="beyond-card reveal"><span className="hobby-icon">🎤</span><h3>Singing</h3></TiltCard></div>
       </section>
 
-      <section className="learning-strip section-shell reveal"><div className="learning-icon"><Sparkles size={24} /></div><div><span className="eyebrow">Currently exploring</span><h2>AI/ML and System Design.</h2><p>Currently exploring AI/ML, System Design, Backend Engineering, and Full-Stack Development while building practical projects.</p></div><div className="orbit"><span>AI</span><span>API</span><span>DB</span></div></section>
+      <section className="learning-strip section-shell reveal"><div className="learning-icon"><Sparkles size={24} /></div><div><span className="eyebrow">Current focus</span><h2>AI/ML and System Design.</h2><p>Currently working on Data Structures &amp; Algorithms in C++.</p></div><div className="orbit"><span>AI</span><span>API</span><span>DB</span></div></section>
 
       <section className="contact-section section-shell" id="contact"><div className="contact-inner reveal"><span className="eyebrow">09 / Contact</span><h2>Let's build<br /><em>something.</em></h2><p>Have an idea, opportunity, or interesting problem?<br />Let’s connect.</p><a className="button primary" href="mailto:YOUR_EMAIL">Start a conversation <ArrowUpRight size={17} /></a><div className="contact-links"><a href="mailto:YOUR_EMAIL"><Mail size={17} /> YOUR_EMAIL</a><a href="https://www.linkedin.com/in/richa-singh-060853314/"><Linkedin size={17} /> LinkedIn</a><a href="https://github.com/richasingh311018"><Github size={17} /> GitHub</a></div></div></section>
     </main>
-    {selectedCertificate && <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setSelectedCertificate(null)}><div className="lightbox-card" onClick={event => event.stopPropagation()}><button onClick={() => setSelectedCertificate(null)} aria-label="Close certificate preview"><X /></button><CertificatePreview src={selectedCertificate} alt="Certificate preview" /><p>Certificate preview</p></div></div>}
-    <footer className="footer section-shell"><span>© 2026 RICHA SINGH</span><span>Designed & built with intention.</span><a href="#home" onClick={() => goTo('home')} aria-label="Back to top"><MoveUpRight size={16} /></a></footer>
+    {selectedCertificate && <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setSelectedCertificate(null)}><div className="lightbox-card" onClick={event => event.stopPropagation()}><button onClick={() => setSelectedCertificate(null)} aria-label="Close image preview"><X /></button><CertificatePreview src={selectedCertificate.src} alt={selectedCertificate.alt} rotated={selectedCertificate.rotated} /><p>Image preview</p></div></div>}
+    <footer className="footer section-shell"><span>© 2026 RICHA SINGH</span><span>AI / Full-stack developer</span><a href="#home" onClick={() => goTo('home')} aria-label="Back to top"><MoveUpRight size={16} /></a></footer>
   </>;
 }
 
