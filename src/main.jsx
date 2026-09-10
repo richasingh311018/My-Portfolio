@@ -106,7 +106,8 @@ function App() {
         <div className="hero-copy">
           <div className="availability"><i /> Open to opportunities <span>·</span> 2026</div>
           <p className="hero-kicker">Computer Science & Engineering <b>×</b> AI</p>
-          <h1>AI developer<br /><em>and engineer.</em></h1>
+          <h1 className="hero-name">Richa Singh</h1>
+          <h2 className="hero-role">Full Stack<br /><em>Developer.</em></h2>
           <p className="hero-intro">AI/ML, full-stack, and backend development.</p>
           <div className="hero-actions"><a className="button primary" href="#projects" onClick={() => goTo('projects')}>View my work <ArrowUpRight size={17} /></a><a className="button secondary" href="/resume.pdf" download><Download size={16} /> Download resume</a></div>
           <div className="social-row"><span>Find me on</span><a href="https://www.linkedin.com/in/richa-singh-060853314/" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="https://github.com/richasingh311018" aria-label="GitHub"><Github size={18} /></a><a href="mailto:YOUR_EMAIL" aria-label="Email"><Mail size={18} /></a></div>
