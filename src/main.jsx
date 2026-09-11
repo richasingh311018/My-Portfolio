@@ -26,13 +26,13 @@ const stack = {
   Development: ['React', 'Node.js', 'Express', 'FastAPI', 'Tailwind CSS', 'Bootstrap'],
   Database: ['MySQL', 'MongoDB'],
   Tools: ['Git', 'GitHub', 'VS Code', 'Docker'],
-  Cloud: ['AWS', 'Cloud / Deployment']
+  Cloud: ['AWS', 'Cloud / Deployment'],
+  'Core Concepts': ['OOPS', 'DSA', 'OS', 'DBMS']
 };
 
 const projects = [
-  { number: '01', name: 'AI Posture Sense', type: 'Exercise posture monitoring', description: 'An AI-powered exercise posture monitoring system that uses computer vision to detect incorrect body posture during workouts in real time and provide posture analysis and feedback.', tech: ['React', 'Tailwind CSS', 'Python', 'OpenCV'], image: 'AI posture analysis', features: ['Real-time posture detection', 'Incorrect posture detection', 'Exercise form monitoring', 'Posture analysis and feedback', 'Real-time feedback', 'User-friendly interface'], tone: 'violet', githubUrl: 'https://github.com/richasingh311018', openInNewTab: true },
-  { number: '02', name: 'AI-Based Predictive Energy Monitoring System', type: 'Hindalco internship project', description: 'An AI-based system for monitoring energy consumption, analyzing usage patterns, detecting anomalies, and identifying inefficient energy usage.', tech: ['Python', 'AI / ML'], image: 'projects/energy-monitoring.jpg', features: ['Usage pattern analysis', 'Anomaly detection', 'Inefficient usage detection'], tone: 'pink', githubUrl: 'https://github.com/richasingh311018/ai-energy-monitoring-system.git' },
-  { number: '03', name: 'SUNOSAATHI', type: 'Voice-first platform', description: 'A voice-first financial inclusion platform designed to make digital financial services easier to access for users with limited digital literacy.', tech: ['React', 'Tailwind', 'Voice AI', 'OCR'], image: 'projects/sunosaathi.jpg', features: ['Voice-first access', 'Accessible UX', 'Financial inclusion'], tone: 'blue', githubUrl: 'https://github.com/richasingh311018/sunosathii.git' }
+  { number: '01', name: 'AI-Based Predictive Energy Monitoring System', type: 'Hindalco internship project', description: 'An AI-based system for monitoring energy consumption, analyzing usage patterns, detecting anomalies, and identifying inefficient energy usage.', tech: ['Python', 'AI / ML'], image: 'projects/energy-monitoring.jpg', features: ['Usage pattern analysis', 'Anomaly detection', 'Inefficient usage detection'], tone: 'pink', githubUrl: 'https://github.com/richasingh311018/ai-energy-monitoring-system.git' },
+  { number: '02', name: 'SUNOSAATHI', type: 'Voice-first platform', description: 'A voice-first financial inclusion platform designed to make digital financial services easier to access for users with limited digital literacy.', tech: ['React', 'Tailwind', 'Voice AI', 'OCR'], image: 'projects/sunosaathi.jpg', features: ['Voice-first access', 'Accessible UX', 'Financial inclusion'], tone: 'blue', githubUrl: 'https://github.com/richasingh311018/sunosathii.git' }
 ];
 
 function useReveal() {
@@ -109,7 +109,7 @@ function App() {
           <h1 className="hero-name">Richa Singh</h1>
           <h2 className="hero-role">Full Stack<br /><em>Developer.</em></h2>
           <p className="hero-intro">AI/ML, full-stack, and backend development.</p>
-          <div className="hero-actions"><a className="button primary" href="#projects" onClick={() => goTo('projects')}>View my work <ArrowUpRight size={17} /></a><a className="button secondary" href="/resume.pdf" download><Download size={16} /> Download resume</a></div>
+          <div className="hero-actions"><a className="button primary" href="#projects" onClick={() => goTo('projects')}>View my work <ArrowUpRight size={17} /></a><button className="button secondary" type="button" onClick={() => setSelectedCertificate({ src: '/assets/resume.pdf', alt: 'Richa Singh resume' })}><Download size={16} /> View my resume</button></div>
           <div className="social-row"><span>Find me on</span><a href="https://www.linkedin.com/in/richa-singh-060853314/" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="https://github.com/richasingh311018" aria-label="GitHub"><Github size={18} /></a><a href="mailto:YOUR_EMAIL" aria-label="Email"><Mail size={18} /></a></div>
         </div>
         <div className="hero-art" aria-label="Abstract interactive developer workspace">
@@ -182,7 +182,7 @@ function App() {
 
       <section className="contact-section section-shell" id="contact"><div className="contact-inner reveal"><span className="eyebrow">09 / Contact</span><h2>Let's build<br /><em>something.</em></h2><p>Have an idea, opportunity, or interesting problem?<br />Let’s connect.</p><a className="button primary" href="mailto:YOUR_EMAIL">Start a conversation <ArrowUpRight size={17} /></a><div className="contact-links"><a href="mailto:YOUR_EMAIL"><Mail size={17} /> YOUR_EMAIL</a><a href="https://www.linkedin.com/in/richa-singh-060853314/"><Linkedin size={17} /> LinkedIn</a><a href="https://github.com/richasingh311018"><Github size={17} /> GitHub</a></div></div></section>
     </main>
-    {selectedCertificate && <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setSelectedCertificate(null)}><div className="lightbox-card" onClick={event => event.stopPropagation()}><button onClick={() => setSelectedCertificate(null)} aria-label="Close image preview"><X /></button><CertificatePreview src={selectedCertificate.src} alt={selectedCertificate.alt} rotated={selectedCertificate.rotated} /><p>Image preview</p></div></div>}
+    {selectedCertificate && <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setSelectedCertificate(null)}><div className="lightbox-card" onClick={event => event.stopPropagation()}><button onClick={() => setSelectedCertificate(null)} aria-label="Close preview"><X /></button><CertificatePreview src={selectedCertificate.src} alt={selectedCertificate.alt} rotated={selectedCertificate.rotated} /><p>Preview</p></div></div>}
     <footer className="footer section-shell"><span>© 2026 RICHA SINGH</span><span>AI / Full-stack developer</span><a href="#home" onClick={() => goTo('home')} aria-label="Back to top"><MoveUpRight size={16} /></a></footer>
   </>;
 }
