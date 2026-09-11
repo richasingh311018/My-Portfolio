@@ -164,7 +164,7 @@ function App() {
       </section>
 
       <section className="section-shell hackathons-section" id="hackathons">
-        <SectionHeading eyebrow="06 / Hackathons" title="Hackathon<br /><span>achievements.</span>" />
+        <SectionHeading eyebrow="06 / Hackathons" title={<>Hackathon<br /><span>achievements.</span></>} />
         <div className="hackathon-grid reveal"><TiltCard className="hack-card"><div className="hack-top"><span className="hack-number">01</span><span className="finalist">Grand Finalist</span></div><div className="hack-logo"><Radio size={25} /> IBM <b>bob</b></div><h3>IBM BOB Hacks '26</h3><p>Grand Finalist at IBM BOB Hacks '26.</p><div className="hack-footer"><img src={ibmGroupPhoto} alt="IBM BOB Hacks group" onClick={() => setSelectedCertificate({ src: ibmGroupPhoto, alt: 'IBM BOB Hacks group' })} role="button" tabIndex="0" /><ArrowUpRight size={17} /></div></TiltCard><TiltCard className="hack-card featured"><div className="hack-top"><span className="hack-number">02</span><span className="finalist">Finalist</span></div><div className="hack-logo"><Sparkles size={25} /> AVINYA</div><h3>IIT Guwahati Avinya</h3><p>Finalist at Avinya, IIT Guwahati.</p><div className="hack-footer"><img src={avinyaGroupPhoto} alt="Avinya group" onClick={() => setSelectedCertificate({ src: avinyaGroupPhoto, alt: 'Avinya group' })} role="button" tabIndex="0" /><ArrowUpRight size={17} /></div></TiltCard></div>
       </section>
 
