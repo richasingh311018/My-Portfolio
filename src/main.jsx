@@ -107,8 +107,8 @@ function App() {
           <div className="availability"><i /> Open to opportunities <span>·</span> 2026</div>
           <p className="hero-kicker">Computer Science & Engineering <b>×</b> AI</p>
           <h1 className="hero-name">Richa Singh</h1>
-          <h2 className="hero-role">Full Stack<br /><em>Developer.</em></h2>
-          <p className="hero-intro">AI/ML, full-stack, and backend development.</p>
+          <h2 className="hero-role">MERN Stack<br /><em>Developer.</em></h2>
+          <p className="hero-intro">MERN stack development, while learning AI/ML and System Design.</p>
           <div className="hero-actions"><a className="button primary" href="#projects" onClick={() => goTo('projects')}>View my work <ArrowUpRight size={17} /></a><button className="button secondary" type="button" onClick={() => setSelectedCertificate({ src: '/assets/resume.pdf', alt: 'Richa Singh resume' })}><Download size={16} /> View my resume</button></div>
           <div className="social-row"><span>Find me on</span><a href="https://www.linkedin.com/in/richa-singh-060853314/" aria-label="LinkedIn"><Linkedin size={18} /></a><a href="https://github.com/richasingh311018" aria-label="GitHub"><Github size={18} /></a><a href="mailto:richasingh311018@gmail.com" aria-label="Email"><Mail size={18} /></a></div>
         </div>
@@ -133,10 +133,10 @@ function App() {
       </section>
 
       <section className="section-shell about-section" id="about">
-        <SectionHeading eyebrow="01 / About" title={<>AI and software<br /><span>development.</span></>} text="Practical applications across AI/ML, full-stack development, backend systems, and System Design." />
+        <SectionHeading eyebrow="01 / About" title={<>MERN stack<br /><span>developer.</span></>} text="Building full-stack web applications with the MERN stack while learning AI/ML and System Design." />
         <div className="about-grid">
-          <div className="about-body reveal"><p>I’m Richa Singh, a Computer Science & Engineering (AI) student at UIET, CSJMU, Kanpur. My work spans AI/ML, full-stack development, backend systems, System Design, and practical hackathon projects.</p><div className="interest-list"><span><Zap size={15} /> Artificial Intelligence</span><span><Terminal size={15} /> Full Stack Development</span><span><BrainCircuit size={15} /> System Design</span></div></div>
-          <TiltCard className="profile-card reveal"><div className="profile-image"><img src={profilePhoto} alt="Richa Singh" /><div className="profile-stamp">CSE<br /><b>AI</b></div></div><div className="profile-meta"><span>Based in India</span><span>AI / Full-stack developer</span></div></TiltCard>
+          <div className="about-body reveal"><p>I’m Richa Singh, a 3rd-year B.Tech CSE (AI) student currently pursuing my degree from UIET, CSJMU. I am a MERN stack developer with experience at Hindalco, Aditya Birla Group, and I am recently learning AI/ML and System Design.</p><div className="interest-list"><span><Terminal size={15} /> MERN Stack Development</span><span><Zap size={15} /> Artificial Intelligence &amp; ML</span><span><BrainCircuit size={15} /> System Design</span></div></div>
+          <TiltCard className="profile-card reveal"><div className="profile-image"><img src={profilePhoto} alt="Richa Singh" /><div className="profile-stamp">CSE<br /><b>AI</b></div></div><div className="profile-meta"><span>Based in India</span><span>MERN stack developer</span></div></TiltCard>
         </div>
       </section>
 
@@ -178,12 +178,12 @@ function App() {
         <div className="beyond-cards"><TiltCard className="beyond-card reveal"><span className="hobby-icon">🥋</span><h3>Taekwondo</h3></TiltCard><TiltCard className="beyond-card reveal"><span className="hobby-icon">🎤</span><h3>Singing</h3></TiltCard></div>
       </section>
 
-      <section className="learning-strip section-shell reveal"><div className="learning-icon"><Sparkles size={24} /></div><div><span className="eyebrow">Current focus</span><h2>AI/ML and System Design.</h2><p>Currently working on Data Structures &amp; Algorithms in C++.</p></div><div className="orbit"><span>AI</span><span>API</span><span>DB</span></div></section>
+      <section className="learning-strip section-shell reveal"><div className="learning-icon"><Sparkles size={24} /></div><div><span className="eyebrow">Current focus</span><h2>AI/ML and System Design.</h2><p>Recently learning AI/ML and System Design alongside MERN stack development.</p></div><div className="orbit"><span>AI</span><span>API</span><span>DB</span></div></section>
 
       <section className="contact-section section-shell" id="contact"><div className="contact-inner reveal"><span className="eyebrow">09 / Contact</span><h2>Let's build<br /><em>something.</em></h2><p>Have an idea, opportunity, or interesting problem?<br />Let’s connect.</p><a className="button primary" href="mailto:richasingh311018@gmail.com">Start a conversation <ArrowUpRight size={17} /></a><div className="contact-links"><a href="mailto:richasingh311018@gmail.com"><Mail size={17} /> Email</a><a href="https://www.linkedin.com/in/richa-singh-060853314/"><Linkedin size={17} /> LinkedIn</a><a href="https://github.com/richasingh311018"><Github size={17} /> GitHub</a></div></div></section>
     </main>
     {selectedCertificate && <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setSelectedCertificate(null)}><div className="lightbox-card" onClick={event => event.stopPropagation()}><button onClick={() => setSelectedCertificate(null)} aria-label="Close preview"><X /></button><CertificatePreview src={selectedCertificate.src} alt={selectedCertificate.alt} rotated={selectedCertificate.rotated} /><p>Preview</p></div></div>}
-    <footer className="footer section-shell"><span>© 2026 RICHA SINGH</span><span>AI / Full-stack developer</span><a href="#home" onClick={() => goTo('home')} aria-label="Back to top"><MoveUpRight size={16} /></a></footer>
+    <footer className="footer section-shell"><span>© 2026 RICHA SINGH</span><span>MERN stack developer</span><a href="#home" onClick={() => goTo('home')} aria-label="Back to top"><MoveUpRight size={16} /></a></footer>
   </>;
 }
 
