@@ -22,8 +22,8 @@ const navItems = [
 ];
 
 const stack = {
-  Languages: ['Python', 'C++', 'Java', 'JavaScript', 'HTML', 'CSS'],
-  Development: ['React', 'Node.js', 'Express', 'FastAPI', 'Tailwind CSS', 'Bootstrap'],
+  Languages: ['Python', 'C++', 'Java', 'JavaScript'],
+  Development: ['HTML', 'CSS', 'React', 'Node.js', 'Express', 'FastAPI', 'Tailwind CSS', 'Bootstrap'],
   Database: ['MySQL', 'MongoDB'],
   Tools: ['Git', 'GitHub', 'VS Code', 'Docker'],
   Cloud: ['AWS', 'Cloud / Deployment'],
